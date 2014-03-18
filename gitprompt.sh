@@ -85,14 +85,17 @@ function git_prompt_config()
   # local Time12a="(\@))"
   local PathShort="\w"
 
+  local Whoami="\$(whoami)"
+  local Whereami="\$(hostname)"
+
   if [ "x${GIT_PROMPT_START}" == "x" ]; then
-    PROMPT_START="${Yellow}${PathShort}${ResetColor}"
+    PROMPT_START="${Whoami}@${Whereami}:${Yellow}${PathShort}${ResetColor}"
   else
     PROMPT_START="${GIT_PROMPT_START}"
   fi
 
   if [ "x${GIT_PROMPT_END}" == "x" ]; then
-    PROMPT_END="${White}${ResetColor} $ "
+    PROMPT_END="${White}${ResetColor}$ "
   else
     PROMPT_END="${GIT_PROMPT_END}"
   fi
