@@ -89,7 +89,7 @@ function git_prompt_config()
   local Whereami="\$(hostname)"
 
   if [ "x${GIT_PROMPT_START}" == "x" ]; then
-    PROMPT_START="${Red}${Whoami}@${Whereami}${ResetColor}:${Yellow}${PathShort}${ResetColor}"
+    PROMPT_START="${Red}${Whoami}${ResetColor}@${Cyan}${Whereami}${ResetColor}:${Yellow}${PathShort}${ResetColor}"
   else
     PROMPT_START="${GIT_PROMPT_START}"
   fi
